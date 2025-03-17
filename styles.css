@@ -137,7 +137,7 @@ body {
 .hero-section {
     position: relative;
     min-height: 130vh;
-    background: url('/images/uyt.jpg') center/cover no-repeat;
+    background: url('images/uyt.jpg') center/cover no-repeat;
     display: flex;
     align-items: center;
     padding: 100px 0;
