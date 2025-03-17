@@ -83,7 +83,7 @@ body {
 
 .dining-section {
     position: relative;
-    background: url('/images/restau.jpg') center/cover no-repeat;
+    background: url('images/restau.jpg') center/cover no-repeat;
     min-height: 100vh;
     display: flex;
     align-items: center;
