@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beuty Sleep - Luxury Hotel Experience</title>
+    <!-- Bootstrap 5.3.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome 6.5.1 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="styles.css" rel="stylesheet">
+    
+    <!-- WhatsApp FAB Styles -->
+    <style>
+        .whatsapp-fab {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .whatsapp-fab:hover {
+            background-color: #128C7E;
+            color: white;
+            transform: scale(1.1);
+        }
+        
+        .whatsapp-fab i {
+            transition: transform 0.3s ease;
+        }
+        
+        .whatsapp-fab:hover i {
+            transform: rotate(360deg);
+        }
+
+        /* Custom styles for View More and Share Experience buttons */
+        .btn-outline-primary {
+            border: none;
+            background: transparent;
+            color: #800080;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-primary:hover {
+            background: rgba(128, 0, 128, 0.1);
+            color: #800080;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-primary:focus {
+            box-shadow: none;
+        }
+
+        .btn-outline-primary:active {
+            background: rgba(128, 0, 128, 0.2) !important;
+            color: #800080 !important;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #1a1a1a;">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <i class="fas fa-crown"></i> Beuty Sleep Hotel
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#rooms">Rooms</a></li>
+                <li class="nav-item"><a class="nav-link" href="#dining">Dining</a></li>
+                <li class="nav-item"><a class="nav-link" href="#spa">Spa</a></li>
+                <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                <li class="nav-item">
+                    <a href="#book" class="btn nav-book-btn">Book Now</a>
+                </li>
+                <button id="themeToggle" class="btn btn-outline-light ms-3">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section with Integrated Booking -->
+<header class="hero-section">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row align-items-center min-vh-75">
+            <!-- Booking Form (Left Side) -->
+            
+
+            <!-- Hero Content (Right Side) -->
+            <div class="col-lg-8 text-white text-lg-start text-center">
+                <div class="hero-content ms-lg-4">
+                    <p class="text-primary text-uppercase mb-2 small">Away from monotonous life</p>
+                    <h1 class="display-4 fw-bold mb-3">Relax Your Mind</h1>
+                    <p class="lead mb-3 small">If you are looking for a luxurious escape from the ordinary, discover our world of exceptional hospitality</p>
+                    <div class="hero-features row g-3 mt-2">
+                        <div class="col-sm-4">
+                            <div class="feature-item">
+                                <i class="fas fa-concierge-bell fa-lg mb-2"></i>
+                                <h5 class="h6">Room Service</h5>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="feature-item">
+                                <i class="fas fa-wifi fa-lg mb-2"></i>
+                                <h5 class="h6">Free WiFi</h5>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="feature-item">
+                                <i class="fas fa-spa fa-lg mb-2"></i>
+                                <h5 class="h6">Spa Center</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Room Types Section -->
+<section id="rooms" class="rooms-section py-5">
+    <div class="container">
+        <div class="section-title text-center mb-5">
+            <h6 class="text-primary text-uppercase">Our Rooms</h6>
+            <h1 class="display-4 text-white">Hotel Accommodation</h1>
+            <p class="text-muted">Experience comfort like never before</p>
+        </div>
+        <div class="row g-4">
+            <!-- First row of rooms (always visible) -->
+            <div class="col-md-6 col-lg-3">
+                <div class="room-card">
+                    <button class="like-btn">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <img src="/images/presidential-suite.jpg" class="card-img-top" alt="Presidential Suite">
+                    <div class="gallery-dots">
+                        <div class="dot active"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="card-body">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.9 (128 reviews)</span>
+                        </div>
+                        <h4 class="card-title">Presidential Suite</h4>
+                        <p class="text-muted">Ultimate luxury with panoramic views</p>
+                        <div class="room-features">
+                            <span><i class="fas fa-bed"></i> King Bed</span>
+                            <span><i class="fas fa-ruler-combined"></i> 200m²</span>
+                            <span><i class="fas fa-users"></i> 4 Adults</span>
+                        </div>
+                        <p class="price">M1,200 <span>/ night</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="room-card">
+                    <button class="like-btn">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <img src="/images/royal-suite.jpg" class="card-img-top" alt="Royal Suite">
+                    <div class="gallery-dots">
+                        <div class="dot active"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="card-body">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.8 (96 reviews)</span>
+                        </div>
+                        <h4 class="card-title">Royal Suite</h4>
+                        <p class="text-muted">Elegant suite with private balcony</p>
+                        <div class="room-features">
+                            <span><i class="fas fa-bed"></i> King Bed</span>
+                            <span><i class="fas fa-ruler-combined"></i> 150m²</span>
+                            <span><i class="fas fa-users"></i> 3 Adults</span>
+                        </div>
+                        <p class="price">M800 <span>/ night</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="room-card">
+                    <button class="like-btn">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <img src="/images/executive-suite.jpg" class="card-img-top" alt="Executive Suite">
+                    <div class="gallery-dots">
+                        <div class="dot active"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="card-body">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.8 (96 reviews)</span>
+                        </div>
+                        <h4 class="card-title">Executive Suite</h4>
+                        <p class="text-muted">Modern luxury with city views</p>
+                        <div class="room-features">
+                            <span><i class="fas fa-bed"></i> Queen Bed</span>
+                            <span><i class="fas fa-ruler-combined"></i> 100m²</span>
+                            <span><i class="fas fa-users"></i> 2 Adults</span>
+                        </div>
+                        <p class="price">M500 <span>/ night</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="room-card">
+                    <button class="like-btn">
+                        <i class="far fa-heart"></i>
+                    </button>
+                    <img src="/images/deluxe-room.jpg" class="card-img-top" alt="Deluxe Room">
+                    <div class="gallery-dots">
+                        <div class="dot active"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="card-body">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.8 (96 reviews)</span>
+                        </div>
+                        <h4 class="card-title">Deluxe Room</h4>
+                        <p class="text-muted">Comfortable and stylish</p>
+                        <div class="room-features">
+                            <span><i class="fas fa-bed"></i> Queen Bed</span>
+                            <span><i class="fas fa-ruler-combined"></i> 75m²</span>
+                            <span><i class="fas fa-users"></i> 2 Adults</span>
+                        </div>
+                        <p class="price">M300 <span>/ night</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Collapsible rooms section -->
+        <div class="collapse" id="moreRooms">
+            <div class="row g-4 mt-4">
+                <!-- Additional room cards -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="room-card">
+                        <button class="like-btn">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="/images/ocean-suite.jpg" class="card-img-top" alt="Ocean View Suite">
+                        <div class="gallery-dots">
+                            <div class="dot active"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                        </div>
+                        <div class="card-body">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.8 (96 reviews)</span>
+                            </div>
+                            <h4 class="card-title">Ocean View Suite</h4>
+                            <p class="text-muted">Breathtaking ocean views</p>
+                            <div class="room-features">
+                                <span><i class="fas fa-bed"></i> King Bed</span>
+                                <span><i class="fas fa-ruler-combined"></i> 120m²</span>
+                                <span><i class="fas fa-users"></i> 3 Adults</span>
+                            </div>
+                            <p class="price">M600 <span>/ night</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="room-card">
+                        <button class="like-btn">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="/images/family-suite.jpg" class="card-img-top" alt="Family Suite">
+                        <div class="gallery-dots">
+                            <div class="dot active"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                        </div>
+                        <div class="card-body">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.8 (96 reviews)</span>
+                            </div>
+                            <h4 class="card-title">Family Suite</h4>
+                            <p class="text-muted">Perfect for family stays</p>
+                            <div class="room-features">
+                                <span><i class="fas fa-bed"></i> 2 Queen Beds</span>
+                                <span><i class="fas fa-ruler-combined"></i> 140m²</span>
+                                <span><i class="fas fa-users"></i> 4 Adults</span>
+                            </div>
+                            <p class="price">M450 <span>/ night</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="room-card">
+                        <button class="like-btn">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="/images/penthouse-suite.jpg" class="card-img-top" alt="Penthouse Suite">
+                        <div class="gallery-dots">
+                            <div class="dot active"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                        </div>
+                        <div class="card-body">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.8 (96 reviews)</span>
+                            </div>
+                            <h4 class="card-title">Penthouse Suite</h4>
+                            <p class="text-muted">Ultimate luxury experience</p>
+                            <div class="room-features">
+                                <span><i class="fas fa-bed"></i> King Bed</span>
+                                <span><i class="fas fa-ruler-combined"></i> 250m²</span>
+                                <span><i class="fas fa-users"></i> 4 Adults</span>
+                            </div>
+                            <p class="price">M1500 <span>/ night</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="room-card">
+                        <button class="like-btn">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="/images/honeymoon-suite.jpg" class="card-img-top" alt="Honeymoon Suite">
+                        <div class="gallery-dots">
+                            <div class="dot active"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                        </div>
+                        <div class="card-body">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.8 (96 reviews)</span>
+                            </div>
+                            <h4 class="card-title">Honeymoon Suite</h4>
+                            <p class="text-muted">Romantic getaway</p>
+                            <div class="room-features">
+                                <span><i class="fas fa-bed"></i> King Bed</span>
+                                <span><i class="fas fa-ruler-combined"></i> 110m²</span>
+                                <span><i class="fas fa-users"></i> 2 Adults</span>
+                            </div>
+                            <p class="price">M700 <span>/ night</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- View More/Less Button -->
+        <div class="text-center mt-5">
+            <button class="btn btn-outline-primary" 
+                    type="button" 
+                    data-bs-toggle="collapse" 
+                    data-bs-target="#moreRooms" 
+                    aria-expanded="false" 
+                    aria-controls="moreRooms">
+                <span class="view-more-text">View More Rooms</span>
+                <span class="view-less-text d-none">View Less</span>
+                <i class="fas fa-chevron-down ms-2 toggle-icon"></i>
+            </button>
+        </div>
+    </div>
+</section>
+<!-- Dining Experience -->
+<section id="dining" class="dining-section py-5 position-relative">
+    <div class="overlay"></div>
+    <div class="container position-relative">
+        <!-- Move section title inside container but before row -->
+        <div class="section-title text-center mb-5">
+            <h6 class="text-primary text-uppercase">Restaurant</h6>
+            <h1 class="display-4 text-white">Dining & Drinks</h1>
+            <p class="text-muted">Savor exceptional culinary experiences</p>
+        </div>
+        
+        <div class="row align-items-center">
+            <div class="col-lg-6 text-white">
+                <h3>Michelin-Star Dining</h3>
+                <p class="text-muted">Indulge in extraordinary culinary experiences crafted by world-renowned chefs.</p>
+                <div class="row g-3 mt-4">
+                    <div class="col-6">
+                        <div class="p-3 border border-secondary rounded">
+                            <i class="fas fa-wine-glass-alt fa-2x mb-3"></i>
+                            <h5>Wine Cellar</h5>
+                            <p class="text-muted mb-0">Extensive collection of rare wines</p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="p-3 border border-secondary rounded">
+                            <i class="fas fa-utensils fa-2x mb-3"></i>
+                            <h5>Fine Dining</h5>
+                            <p class="text-muted mb-0">International cuisine</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Standard Section Title Pattern -->
+
+<!-- Spa & Wellness -->
+<section id="spa" class="spa-section py-5">
+    <div class="section-title text-center mb-5">
+        <h6 class="text-primary text-uppercase">Wellness</h6>
+        <h1 class="display-4 text-white">Spa & Fitness</h1>
+        <p class="text-muted">Rejuvenate your body and mind</p>
+    </div>
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="text-center text-white spa-service">
+                    <i class="fas fa-spa fa-3x mb-3"></i>
+                    <h4>Massage Therapy</h4>
+                    <p class="text-muted">Professional therapeutic treatments</p>
+                    <ul class="list-unstyled text-muted">
+                        <li>Swedish Massage</li>
+                        <li>Deep Tissue</li>
+                        <li>Hot Stone Therapy</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="text-center text-white spa-service">
+                    <i class="fas fa-swimming-pool fa-3x mb-3"></i>
+                    <h4>Wellness Pool</h4>
+                    <p class="text-muted">Heated indoor pool & jacuzzi</p>
+                    <ul class="list-unstyled text-muted">
+                        <li>Hydrotherapy</li>
+                        <li>Steam Room</li>
+                        <li>Sauna</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="text-center text-white spa-service">
+                    <i class="fas fa-dumbbell fa-3x mb-3"></i>
+                    <h4>Fitness Center</h4>
+                    <p class="text-muted">State-of-the-art equipment</p>
+                    <ul class="list-unstyled text-muted">
+                        <li>Personal Training</li>
+                        <li>Yoga Classes</li>
+                        <li>Cardio Zone</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="text-center text-white spa-service">
+                    <i class="fas fa-leaf fa-3x mb-3"></i>
+                    <h4>Beauty Treatments</h4>
+                    <p class="text-muted">Luxurious beauty services</p>
+                    <ul class="list-unstyled text-muted">
+                        <li>Facial Treatments</li>
+                        <li>Body Wraps</li>
+                        <li>Manicure & Pedicure</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Spa Packages -->
+        <div class="row mt-5">
+            <div class="col-12 text-center mb-4">
+                <h3 class="text-white">Wellness Packages</h3>
+                <p class="text-muted">Choose from our carefully curated spa packages</p>
+            </div>
+            <div class="col-md-4">
+                <div class="package-card text-center p-4">
+                    <h5 class="text-primary">Relaxation Package</h5>
+                    <p class="text-muted mb-3">2 Hours of Pure Bliss</p>
+                    <ul class="list-unstyled text-muted">
+                        <li><i class="fas fa-check me-2"></i>Swedish Massage (60min)</li>
+                        <li><i class="fas fa-check me-2"></i>Facial Treatment</li>
+                        <li><i class="fas fa-check me-2"></i>Steam Room Access</li>
+                    </ul>
+                    <div class="price text-white my-3">M150</div>
+                    <button class="btn btn-outline-primary">Book Now</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="package-card text-center p-4">
+                    <h5 class="text-primary">Luxury Escape</h5>
+                    <p class="text-muted mb-3">4 Hours of Luxury</p>
+                    <ul class="list-unstyled text-muted">
+                        <li><i class="fas fa-check me-2"></i>Hot Stone Massage (90min)</li>
+                        <li><i class="fas fa-check me-2"></i>Premium Facial</li>
+                        <li><i class="fas fa-check me-2"></i>Body Wrap</li>
+                        <li><i class="fas fa-check me-2"></i>Spa Lunch Included</li>
+                    </ul>
+                    <div class="price text-white my-3">M280</div>
+                    <button class="btn btn-outline-primary">Book Now</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="package-card text-center p-4">
+                    <h5 class="text-primary">Fitness & Wellness</h5>
+                    <p class="text-muted mb-3">Full Day Experience</p>
+                    <ul class="list-unstyled text-muted">
+                        <li><i class="fas fa-check me-2"></i>Personal Training Session</li>
+                        <li><i class="fas fa-check me-2"></i>Yoga Class</li>
+                        <li><i class="fas fa-check me-2"></i>Deep Tissue Massage</li>
+                        <li><i class="fas fa-check me-2"></i>Healthy Meal Plan</li>
+                    </ul>
+                    <div class="price text-white my-3">M200</div>
+                    <button class="btn btn-outline-primary">Book Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--
+<section id="gallery" class="gallery-section py-5">
+    <div class="section-title text-center mb-5">
+    <h6 class="text-primary text-uppercase">Our Gallery</h6>
+    <h1 class="display-4 text-white">Photo Gallery</h1>
+    <p class="text-muted">Discover our beautiful moments</p>
+</div>
+    <div class="container">
+        <div class="row g-3">
+            
+            <div class="col-md-4">
+                <div class="gallery-item">
+                    <img src="gallery1.jpg" class="img-fluid" alt="Hotel Interior">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand"></i>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+</section>
+-->
+
+<!-- Standard Section Title Pattern -->
+<div class="section-title text-center mb-5">
+    <h6 class="text-primary text-uppercase">Testimonials</h6>
+    <h1 class="display-4 text-white">Our Guests Love Us</h1>
+    <p class="text-muted">What our happy customers say about us</p>
+</div>
+
+<!-- Testimonials -->
+<section class="testimonials-section py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="card bg-dark text-white">
+                    <div class="card-body">
+                        <i class="fas fa-quote-left fa-2x mb-3 text-primary"></i>
+                        <p class="card-text">An unforgettable experience. The attention to detail and service was impeccable. The staff went above and beyond to make our stay memorable.</p>
+                        <div class="testimonial-author mt-4">
+                            <div class="d-flex align-items-center">
+                                <img src="/images/guest1.jpg" alt="John Doe" class="rounded-circle me-3" width="50">
+                                <div>
+                                    <h6 class="mb-1">Thabang Mohale</h6>
+                                    <p class="text-muted mb-0">Ha Thetsane, MSU</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- New Testimonial 2 -->
+            <div class="col-lg-4 mb-4">
+                <div class="card bg-dark text-white">
+                    <div class="card-body">
+                        <i class="fas fa-quote-left fa-2x mb-3 text-primary"></i>
+                        <p class="card-text">The Royal Suite exceeded all expectations. The panoramic views, luxurious amenities, and world-class dining made our honeymoon perfect.</p>
+                        <div class="testimonial-author mt-4">
+                            <div class="d-flex align-items-center">
+                                <img src="/images/guest2.jpg" alt="Sarah Johnson" class="rounded-circle me-3" width="50">
+                                <div>
+                                    <h6 class="mb-1">Sebabatso Moshoeshoe</h6>
+                                    <p class="text-muted mb-0">Maseru-west, MSU</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- New Testimonial 3 -->
+            <div class="col-lg-4 mb-4">
+                <div class="card bg-dark text-white">
+                    <div class="card-body">
+                        <i class="fas fa-quote-left fa-2x mb-3 text-primary"></i>
+                        <p class="card-text">The spa treatments were divine and the restaurant's culinary offerings were exceptional. A truly five-star experience from start to finish.</p>
+                        <div class="testimonial-author mt-4">
+                            <div class="d-flex align-items-center">
+                                <img src="/images/guest3.jpg" alt="Michael Chen" class="rounded-circle me-3" width="50">
+                                <div>
+                                    <h6 class="mb-1">Chabeli Chabeli</h6>
+                                    <p class="text-muted mb-0">Khubetsoana ,BRE</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Add this button after the testimonials and before the form -->
+<div class="text-center mb-5">
+    <button class="btn btn-outline-primary" 
+            type="button" 
+            data-bs-toggle="collapse" 
+            data-bs-target="#testimonialFormSection" 
+            aria-expanded="false" 
+            aria-controls="testimonialFormSection">
+        <span class="share-experience-text">Share Your Experience</span>
+        <span class="hide-form-text d-none">Hide Form</span>
+        <i class="fas fa-chevron-down ms-2 toggle-icon"></i>
+    </button>
+</div>
+
+<!-- Wrap the form section in a collapse div -->
+<div class="collapse" id="testimonialFormSection">
+    <div class="testimonial-form-section">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card bg-dark text-white">
+                    <div class="card-body p-4">
+                        <h4 class="text-center mb-4">Share Your Experience</h4>
+                        <form id="testimonialForm" class="testimonial-form">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label text-muted">Full Name</label>
+                                        <input type="text" class="form-control dark-input" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label text-muted">Email Address</label>
+                                        <input type="email" class="form-control dark-input" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label text-muted">Phone Number</label>
+                                        <input type="tel" class="form-control dark-input">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label text-muted">Room Type</label>
+                                        <select class="form-select dark-input">
+                                            <option value="">Select Room Type</option>
+                                            <option value="presidential">Presidential Suite</option>
+                                            <option value="royal">Royal Suite</option>
+                                            <option value="executive">Executive Suite</option>
+                                            <option value="deluxe">Deluxe Room</option>
+                                            <option value="ocean">Ocean View Suite</option>
+                                            <option value="family">Family Suite</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label text-muted">Your Message</label>
+                                        <textarea class="form-control dark-input" rows="4" required></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-check mb-3">
+                                        <input class="form-check-input" type="checkbox" id="consentCheck" required>
+                                        <label class="form-check-label text-muted" for="consentCheck">
+                                            I consent to having my testimonial displayed on the website
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-12 text-center">
+                                    <button type="submit" class="btn btn-primary px-5">
+                                        <i class="fas fa-paper-plane me-2"></i>Submit Testimonial
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Standard Section Title Pattern -->
+<div class="section-title text-center mb-5">
+    <h6 class="text-primary text-uppercase">Our Services</h6>
+    <h1 class="display-4 text-white">Royal Facilities</h1>
+    <p class="text-muted">Who are in extremely love with eco friendly system</p>
+</div>
+
+<!-- Facilities Section (New) -->
+<section class="facilities-section py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="facility-item text-white">
+                    <i class="fas fa-utensils fa-3x mb-3"></i>
+                    <h4>Restaurant</h4>
+                    <p class="text-muted">Experience world-class dining with our master chefs</p>
+                </div>
+            </div>
+            <!-- Add more facility items -->
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer text-white py-5" style="background-color: #0f0f0f;">
+    <div class="container">
+        <div class="row g-4">
+            <!-- Hotel Info -->
+            <div class="col-lg-3 col-md-6">
+                <h5 class="mb-4">Beuty Sleep Hotel</h5>
+                <p class="text-muted mb-4">Experience unparalleled luxury at our five-star establishment. Where every moment is crafted for perfection.</p>
+                <div class="social-links">
+                    <a href="#" class="text-muted me-3 hover-gold"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-muted me-3 hover-gold"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-muted me-3 hover-gold"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-muted hover-gold"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-lg-3 col-md-6">
+                <h5 class="mb-4">Quick Links</h5>
+                <ul class="list-unstyled footer-links">
+                    <li><a href="#rooms" class="text-muted"><i class="fas fa-angle-right me-2"></i>Our Rooms</a></li>
+                    <li><a href="#dining" class="text-muted"><i class="fas fa-angle-right me-2"></i>Dining</a></li>
+                    <li><a href="#spa" class="text-muted"><i class="fas fa-angle-right me-2"></i>Spa & Wellness</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="col-lg-3 col-md-6">
+                <h5 class="mb-4">Contact Info</h5>
+                <ul class="list-unstyled footer-contact">
+                    <li class="d-flex mb-3">
+                        <i class="fas fa-map-marker-alt text-primary me-3 mt-1"></i>
+                        <span class="text-muted">123 Beuty Sleep Hotel, Maseru Mall, MSU 100, LS</span>
+                    </li>
+                    <li class="d-flex mb-3">
+                        <i class="fas fa-phone-alt text-primary me-3 mt-1"></i>
+                        <div class="text-muted">
+                            <p class="mb-1">Reservations: (266) 57428747</p>
+                            <p class="mb-0">Front Desk: (266) 58734975</p>
+                        </div>
+                    </li>
+                    <li class="d-flex mb-3">
+                        <i class="fas fa-envelope text-primary me-3 mt-1"></i>
+                        <div class="text-muted">
+                            <p class="mb-1">Bookings: reservations@BeutySleep.com</p>
+                            <p class="mb-0">General: info@BeutySleep.com</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="col-lg-3 col-md-6">
+                <h5 class="mb-4">Newsletter</h5>
+                <p class="text-muted mb-4">Subscribe to our newsletter for exclusive offers and updates.</p>
+                <form class="newsletter-form">
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control dark-input" placeholder="Your Email" aria-label="Your Email">
+                        <button class="btn btn-primary" type="submit">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </form>
+                <div class="mt-4">
+                    <h6 class="mb-3">Payment Methods</h6>
+                    <div class="payment-methods">
+                        <i class="fab fa-cc-visa me-2"></i>
+                        <i class="fab fa-cc-mastercard me-2"></i>
+                        <i class="fab fa-cc-amex me-2"></i>
+                        <i class="fab fa-cc-discover"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Footer -->
+        <div class="footer-bottom">
+            <hr class="my-4 border-secondary">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="text-muted mb-md-0">© 2024 BeutySlepp. All rights reserved.</p>
+                </div>
+                <div class="col-md-6">
+                    <ul class="list-inline text-md-end mb-0">
+                        <li class="list-inline-item"><a href="#" class="text-muted">Privacy Policy</a></li>
+                        <li class="list-inline-item ms-3"><a href="#" class="text-muted">Terms of Use</a></li>
+                        <li class="list-inline-item ms-3"><a href="#" class="text-muted">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Bootstrap 5.3.3 JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<div class="loader">
+    <div class="spinner"></div>
+</div>
+
+<script src="app.js"></script>
+
+<!-- WhatsApp Floating Action Button -->
+<a href="https://wa.me/26657428747" class="whatsapp-fab" target="_blank" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i>
+</a>
+</body>
+</html> 
